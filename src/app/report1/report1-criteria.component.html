@@ -1,0 +1,50 @@
+<div class='card'>
+  <div class='card-header'>
+    {{pageTitle}}
+  </div>
+  <div class='card-body'>
+    <div class='row'>
+      <div class='col-md-2'>No of days(s):</div>
+      <!--<div class='col-md-2'>
+        <input type="date" [ngModel] ="dateCriteria | date:'yyyy-MM-dd'" min="{{date | date:'yyyy-MM-dd'}}" (ngModelChange)="dateCriteria = $event">
+      </div>-->
+      <div class='col-md-3'><ngbd-datepicker-popup (notify)='onNotify($event)'></ngbd-datepicker-popup></div>
+
+      <div class='col-md-2'>
+        <button class='btn btn-primary' (click)='onSearchClick()' >Search</button>
+      </div>
+    </div>
+  </div>
+  <div class='table-responsive'>
+    <table class='table'
+           *ngIf='results && results.length'>
+      <thead>
+        <tr>
+          <th>Owner Name</th>
+          <th>Email</th>
+          <th>Model</th>
+          <th>Purchase Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let result of results| paginate: { id: 'result.name',
+                                                      itemsPerPage: 2,
+                                                      currentPage: p,
+                                                      totalItems: total }"">
+          <td>
+            {{result.name}}
+          </td>
+          <td>
+            {{result.email}}
+          </td>
+          <td>
+            {{result.model}}
+          </td>
+          <td>
+            {{result.purchasePrice}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

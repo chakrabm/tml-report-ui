@@ -1,0 +1,10 @@
+<nav class='navbar navbar-expand navbar-light bg-light'>
+    <a class='navbar-brand'>{{title}}</a>
+    <ul class='nav nav-pills'>
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/report1']">Report1</a></li>
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/report2']">Report2</a></li>
+    </ul>
+</nav>
+<div class='container'>
+  <router-outlet></router-outlet>
+</div>
