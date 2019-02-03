@@ -32,3 +32,18 @@
 10.	npm install popper.js --save
 11.	npm install jquery --save
 12.	npm install ngx-pagination --save
+
+--------------------------------
+
+Java
+
+@CrossOrigin(origins = "http://localhost:4200")
+
+@GetMapping("/purchasedBefore/{date}")
+	public List<Bike> getPurchasedBefore(@PathVariable("date") String date) throws ParseException {
+		Date dateCriteria = new SimpleDateFormat("yyyy-MM-dd").parse(date);
+		
+		logger.info("Date passed: " + dateCriteria);
+		
+		return bikeRepository.findByPurchaseDateGreaterThan(dateCriteria);
+	}
