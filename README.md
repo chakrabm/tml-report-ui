@@ -47,3 +47,7 @@ Java
 		
 		return bikeRepository.findByPurchaseDateGreaterThan(dateCriteria);
 	}
+  
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory; 
+Logger logger = LoggerFactory.getLogger(BikesController.class);
