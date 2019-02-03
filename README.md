@@ -1,27 +1,34 @@
-# TmlReportUi
+// Create the inital angular project
+1.	ng new tml-report-ui --prefix tml
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
+//Create a shared module
+2.	ng g m shared/shared --flat
 
-## Development server
+//Create first feature module
+3.	ng g m report1/report1 --flat -m app
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+//Create Second feature module
+4.	ng g m report2/report2 --flat -m app
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+//Install bootstrap/font-awesome 
+5.	npm install bootstrap
+	npm install font-awesome
+	
+	Add the below 2 lines in src/styles.css
+	@import "~bootstrap/dist/css/bootstrap.min.css";
+	@import "~font-awesome/css/font-awesome.min.css";
+	
+6.	Modify app.component.html, app.component.css
+7.	Update Report1.module.ts
 
-## Build
+//Create both component we need - Criteria/Results
+8.	ng g c report1/report1Criteria --flat -m report1/report1.module
+	ng g c report1/report1Result --flat -m report1/report1.module
+	
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+	
+9.	npm install @ng-bootstrap/ng-bootstrap --save
+10.	npm install popper.js --save
+11.	npm install jquery --save
+12.	npm install ngx-pagination --save
